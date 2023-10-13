@@ -1,0 +1,42 @@
+<div class="container-sm small-form" style="width: 500px; margin-top: 20px">
+  <h1>Step 3</h1>
+
+  <div class="card mb-3" style="width: 25rem">
+    <div class="card-body">
+      <div class="row mb-1">
+        <span class="col-6">Name: </span>
+        <span class="col-6"><%= @information.name %></span>
+      </div>
+      <div class="row mb-1">
+        <span class="col-6">Department: </span>
+        <span class="col-6"><%= @information.department %></span>
+      </div>
+      <div class="row mb-1" style="padding: 0 0 0 12px;">Positions:</div>
+      <% @information.positions.each do |pos| %>
+        <div class="row ps-2">
+          <span class="col-6"><%= pos.position %></span>
+          <span class="col-6"><%= pos.position_date.strftime('%B %d %Y') %></span>
+        </div>
+      <% end %>
+      <div class="row mb-1">
+        <span class="col-6">Current job: </span>
+        <span class="col-6"><%= @job.job_current %></span>
+      </div>
+      <div class="row mb-1">
+        <span class="col-6">Job performed: </span>
+        <span class="col-6"><%= @job.job_perform %></span>
+      </div>
+      <div class="row mb-1">
+        <span class="col-6">Hours: </span>
+        <span class="col-6"><%= @job.job_time_hour %></span>
+      </div>
+      <div class="row mb-1">
+        <span class="col-6">Minutes: </span>
+        <span class="col-6"><%= @job.job_time_min %></span>
+      </div>
+    </div>
+  </div>
+
+    <%= link_to 'Back', edit_job_path(current_user.job), class: 'btn btn-primary' %>
+    <%= link_to 'Confirm', confirmations_confirm_path, class: 'btn btn-primary' %>
+</div>

@@ -1,0 +1,18 @@
+
+<%= simple_form_for(job) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.input :job_perform, label: 'Job performed' %>
+    <%= f.input :job_time_hour, label: 'Hours' %>
+    <%= f.input :job_time_min, label: 'Minutes' %>
+    <%= f.input :job_current, label: 'Current Job'%>
+  </div>
+
+  <div class="form-actions">
+    <%= link_to 'Back', edit_information_path(current_user.information), class: 'btn btn-primary' %>
+    <%= f.button :submit, 'Next', class: 'btn btn-primary' %>
+  </div>
+<% end %>

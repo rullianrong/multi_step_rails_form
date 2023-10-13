@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  job_perform: MyText
+  job_time_hour: 1
+  job_time_min: 1
+  job_current: MyString
+  user: one
+
+two:
+  job_perform: MyText
+  job_time_hour: 1
+  job_time_min: 1
+  job_current: MyString
+  user: two
